@@ -2,7 +2,7 @@ const express = require ('express')
 const dishes = require('./dishes.js')
 const server = express()
 require('dotenv').config()
-const PORT=process.env.NODE_ENV || 8000
+const PORT=process.env.PORT || 8000
 server.get('/api/dishes',(req,res)=>{
     res.json(dishes)
 })
