@@ -22,3 +22,6 @@ header{
 .top-nav__item:not(:last-child){
     margin-right: 40px;
 }
+.mobile-menu{
+    display: none;
+}

@@ -1,8 +1,9 @@
-import React from 'react';
+import React,{useState} from 'react';
 import './header.css'
 import {Link} from "react-router-dom";
 
 const Header = () => {
+    const [showMenu, setMenu]=useState(false)
     return (
 
             <header>
@@ -11,13 +12,16 @@ const Header = () => {
                         <img src="./images/logo.png" alt=""/>
 
                     </Link>
-                    <nav className="top-nav">
+                    <nav className={`top-nav ${showMenu ? 'show' : ''}`}>
                         <Link to="/" className="top-nav__item">Home</Link>
                         <Link to="/about" className="top-nav__item">About Us</Link>
                         <Link to="/menu" className="top-nav__item">Menu</Link>
                         <Link to="/gallery" className="top-nav__item">Gallery</Link>
                         <Link to="/contacts" className="top-nav__item">Find Us</Link>
                     </nav>
+                    <div className="mobile-menu" onClick={()=> setMenu(!showMenu)}>
+                        <span></span>
+                    </div>
                 </div>
             </header>
 
