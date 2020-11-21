@@ -8,7 +8,7 @@ const DishDetails = () => {
     const{ id }= useParams()
     const [dish, setDish]=useState({})
     useEffect(()=> {
-        axios.get(`http:/api/dishes/${id}`).then(({data}) =>setDish(data))
+        axios.get(`/api/dishes/${id}`).then(({data}) =>setDish(data))
 
     }, [id])
     return (

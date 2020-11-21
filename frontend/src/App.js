@@ -10,27 +10,28 @@ import Gallery from "./components/gallery/gallery";
 import Contacts from "./components/contacts/contacts";
 import {Container} from "react-bootstrap";
 import DishDetails from "./components/dish-details/dish-details";
-
-
+import Footer from "./components/footer/footer";
+import Home from "./home";
 
 function App() {
-  return (
-    <Router>
-        <TopBar/>
-        <Header/>
-        <Container>
-            <Route exact path="/" component={()=><Main/>}/>
-            <Route exact path="/about" component={()=><About/>}/>
-            <Route exact path="/menu" component={()=><Menu/>}/>
-            <Route exact path="/gallery" component={()=><Gallery/>}/>
-            <Route exact path="/contacts" component={()=><Contacts/>}/>
-            <Route exact path="/dish/:id" component={()=><DishDetails/>}/>
-        </Container>
+    return (
+        <Router>
+            <div className="main-wrap">
+                <TopBar/>
+                <Header/>
+                <Route exact path="/" component={() => <Main/>}/>
+                <Route exact path="/about" component={() => <Home/>}/>
+                <Route exact path="/menu" component={() => <Home/>}/>
+                <Route exact path="/gallery" component={() => <Home/>}/>
+                <Route exact path="/contacts" component={() => <Home/>}/>
+                <Route exact path="/dish/:id" component={() => <Home/>}/>
+                </div>
+                <Footer/>
 
-    </Router>
+        </Router>
 
 
-  );
+);
 }
 
 export default App;

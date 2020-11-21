@@ -18,7 +18,7 @@ const Menu = () => {
                     dishes.map((dish)=>(
                         <Col lg={4}>
                             <Card className="mb-3 d-flex">
-                                <Link to={`/dish/${dish.id}`}>
+                                <Link to={`/dish/${dish._id}`}>
                                 <Card.Img variant="top" src={dish.image} />
                                 <Card.Body>
                                     <Card.Title>{dish.name}</Card.Title>

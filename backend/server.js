@@ -1,15 +1,22 @@
-const express = require ('express')
-const dishes = require('./dishes.js')
-const path = require("path")
+import express from 'express'
+import dotenv from 'dotenv'
+import  path from 'path'
+import cors from 'cors'
+import connectDB from './connection/mongoose.js'
+import Dish from "./models/dishModel.js"
+dotenv.config()
+connectDB()
+
 const server = express()
-require('dotenv').config()
 const PORT=process.env.PORT || 8000
-server.get('/api/dishes',(req,res)=>{
+server.use(cors())
+server.get('/api/dishes', async (req,res)=>{
+   const dishes =await Dish.find({})
     res.json(dishes)
 })
 
-server.get('/api/dishes/:id',(req,res)=>{
-   const dish= dishes.find((el)=>el.id === +req.params.id)
+server.get('/api/dishes/:id', async (req,res)=>{
+  const dish = await Dish.findById(+req.params.id)
     res.json(dish)
 })
 

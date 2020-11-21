@@ -3,14 +3,14 @@
     padding: 10px 0;
     color: white;
 }
-.top-bar__contacts{
+.top-bar-contacts{
     font-size: 12px;
 }
-.top-bar__contacts span:first-child{
-    margin-right: 60px;
-}
-.top-bar__contacts span i {
+.top-bar-contacts span:first-child{
     margin-right: 20px;
+}
+.top-bar-contacts span i {
+    margin-right:10px;
 }
 .top-bar__social a:first-child{
     margin-right: 10px;
